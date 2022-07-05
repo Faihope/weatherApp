@@ -1,0 +1,56 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <h3 class="text-center">Search for weather </h3>
+
+            <form method="POST" [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+                <div class="form-group">
+                  <input
+                    class="form-control mb-4"
+                    type="text"
+                    id="weather"
+                    aria-describedby="weather"
+                    placeholder="Please input a Latitude" 
+                    formControlName="latitude"
+                  />
+                 </div>
+
+                 <div class="form-group">
+                    <input
+                      class="form-control mb-4"
+                      type="text"
+                      id="weather"
+                      aria-describedby="weather"
+                      placeholder="Please input a Longitude"
+                      formControlName="longitude"
+                    />
+                   </div>
+                 <div class="text-center"> 
+                  <button type="submit" class="btn btn-success btn-md">
+                    Get weather Forecast</button>
+                 </div>
+               </form> 
+           
+        </div>
+
+        <div class="col-md-6">
+            <h3 class="text-center">See results</h3>
+
+            
+            <div class="card " >
+              <div class="card-header">
+                Whether forcast Today: {{this.weatherData?.hourly.time[0] | date}}
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">humidity in % : {{this.weatherData?.hourly.relativehumidity_2m[0]}} </li>
+                <li class="list-group-item">Temperature in °C : {{this.weatherData?.hourly.temperature_2m[0] }}</li>
+                <li class="list-group-item">cloudcover in % : {{this.weatherData?.hourly.cloudcover_mid[0]}}</li>
+                <li class="list-group-item">windspeed in km/hr: {{this.weatherData?.hourly.windspeed_120m[0]}}</li>
+
+              </ul>
+            </div>
+
+        </div>
+    </div>
+</div>

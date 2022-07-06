@@ -1,6 +1,6 @@
 
 <div class="container">
-    <div class="row">
+    <div class="row mb-4">
         <div class="col-md-6 mb-4">
             <h3 class="text-center">Search for weather </h3>
 
@@ -35,22 +35,77 @@
         </div>
 
         <div class="col-md-6">
-            <h3 class="text-center">See results</h3>
+            <h3 class="text-center">Daily Weather forecssat</h3>
 
             
             <div class="card " >
               <div class="card-header">
-                Whether forcast Today: {{this.weatherData?.hourly.time[0] | date}}
+                Whether forcast Today: {{this.weatherData?.hourly.time[7] | date}}
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">humidity in % : {{this.weatherData?.hourly.relativehumidity_2m[0]}} </li>
-                <li class="list-group-item">Temperature in °C : {{this.weatherData?.hourly.temperature_2m[0] }}</li>
-                <li class="list-group-item">cloudcover in % : {{this.weatherData?.hourly.cloudcover_mid[0]}}</li>
-                <li class="list-group-item">windspeed in km/hr: {{this.weatherData?.hourly.windspeed_120m[0]}}</li>
+                <li class="list-group-item">humidity in % : {{this.weatherData?.hourly.relativehumidity_2m[7]}} </li>
+                <li class="list-group-item">Temperature in °C : {{this.weatherData?.hourly.temperature_2m[7] }}</li>
+                <li class="list-group-item">cloudcover in % : {{this.weatherData?.hourly.cloudcover_mid[7]}}</li>
+                <li class="list-group-item">windspeed in km/hr: {{this.weatherData?.hourly.windspeed_120m[7]}}</li>
 
               </ul>
             </div>
 
         </div>
     </div>
+    
+<div class="row">
+<h1 class="text-center">Hourly Weather Forecast</h1>
+<div class="col-sm-10">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Time</th>
+        <th scope="col">Temperature in °C </th>
+        <th scope="col">Humudity in %</th>
+        <th scope="col">Windspeed in km/hr</th>
+        <th scope="col">cloud Cover in %</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">6.00 am</th>
+        <td>{{this.weatherData?.hourly.temperature_2m[8] }}</td>
+        <td>{{this.weatherData?.hourly.relativehumidity_2m[8]}}</td>
+        <td> {{this.weatherData?.hourly.windspeed_120m[8]}}</td>
+        <td>{{this.weatherData?.hourly.cloudcover_mid[8]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">7.00 am</th>
+        <td>{{this.weatherData?.hourly.temperature_2m[9] }}</td>
+        <td>{{this.weatherData?.hourly.relativehumidity_2m[9]}}</td>
+        <td> {{this.weatherData?.hourly.windspeed_120m[9]}}</td>
+        <td>{{this.weatherData?.hourly.cloudcover_mid[9]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">8.00 am</th>
+        <td>{{this.weatherData?.hourly.temperature_2m[10] }}</td>
+        <td>{{this.weatherData?.hourly.relativehumidity_2m[10]}}</td>
+        <td> {{this.weatherData?.hourly.windspeed_120m[10]}}</td>
+        <td>{{this.weatherData?.hourly.cloudcover_mid[10]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">9.00 am</th>
+        <td>{{this.weatherData?.hourly.temperature_2m[11] }}</td>
+        <td>{{this.weatherData?.hourly.relativehumidity_2m[11]}}</td>
+        <td> {{this.weatherData?.hourly.windspeed_120m[11]}}</td>
+        <td>{{this.weatherData?.hourly.cloudcover_mid[11]}}</td>
+      </tr>
+      <tr>
+        <th scope="row">6.00 pm</th>
+        <td>{{this.weatherData?.hourly.temperature_2m[17] }}</td>
+        <td>{{this.weatherData?.hourly.relativehumidity_2m[17]}}</td>
+        <td> {{this.weatherData?.hourly.windspeed_120m[17]}}</td>
+        <td>{{this.weatherData?.hourly.cloudcover_mid[17]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
 </div>
